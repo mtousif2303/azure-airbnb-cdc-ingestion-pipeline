@@ -21,7 +21,7 @@
 		"schema": [
 			{
 				"name": "customer_id",
-				"type": "String"
+				"type": "Integer"
 			},
 			{
 				"name": "first_name",
