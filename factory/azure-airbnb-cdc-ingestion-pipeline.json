@@ -1,0 +1,9 @@
+{
+	"name": "azure-airbnb-cdc-ingestion-pipeline",
+	"location": "germanywestcentral",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "63ab4048-0fa3-447d-9344-974e9df1e87c",
+		"tenantId": "2e4c4699-333e-4683-9f35-9a0de9c071db"
+	}
+}
