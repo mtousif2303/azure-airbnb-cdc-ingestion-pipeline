@@ -7,7 +7,52 @@
 		},
 		"annotations": [],
 		"type": "CosmosDbSqlApiCollection",
-		"schema": {},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"booking_id": {
+					"type": "string"
+				},
+				"property_id": {
+					"type": "string"
+				},
+				"customer_id": {
+					"type": "integer"
+				},
+				"owner_id": {
+					"type": "string"
+				},
+				"check_in_date": {
+					"type": "string"
+				},
+				"check_out_date": {
+					"type": "string"
+				},
+				"booking_date": {
+					"type": "string"
+				},
+				"amount": {
+					"type": "number"
+				},
+				"currency": {
+					"type": "string"
+				},
+				"property_location": {
+					"type": "object",
+					"properties": {
+						"city": {
+							"type": "string"
+						},
+						"country": {
+							"type": "string"
+						}
+					}
+				},
+				"timestamp": {
+					"type": "string"
+				}
+			}
+		},
 		"typeProperties": {
 			"collectionName": "bookings"
 		}

@@ -1,0 +1,90 @@
+{
+	"name": "BookingFactDataSynapase",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSynapseAnalyticsForAirBnB",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlDWTable",
+		"schema": [
+			{
+				"name": "booking_id",
+				"type": "nvarchar"
+			},
+			{
+				"name": "property_id",
+				"type": "nvarchar"
+			},
+			{
+				"name": "customer_id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "owner_id",
+				"type": "nvarchar"
+			},
+			{
+				"name": "check_in_date",
+				"type": "date"
+			},
+			{
+				"name": "check_out_date",
+				"type": "date"
+			},
+			{
+				"name": "booking_date",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "amount",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "currency",
+				"type": "nvarchar"
+			},
+			{
+				"name": "city",
+				"type": "nvarchar"
+			},
+			{
+				"name": "country",
+				"type": "nvarchar"
+			},
+			{
+				"name": "full_address",
+				"type": "nvarchar"
+			},
+			{
+				"name": "stay_duration",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "booking_year",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "booking_month",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "timestamp",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			}
+		],
+		"typeProperties": {
+			"schema": "airbnb",
+			"table": "bookings_fact"
+		}
+	}
+}

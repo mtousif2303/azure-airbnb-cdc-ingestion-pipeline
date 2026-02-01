@@ -1,0 +1,91 @@
+{
+	"name": "CustomerDataSynapse",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSynapseAnalyticsForAirBnB",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlDWTable",
+		"schema": [
+			{
+				"name": "customer_id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "first_name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "last_name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "email",
+				"type": "nvarchar"
+			},
+			{
+				"name": "phone_number",
+				"type": "nvarchar"
+			},
+			{
+				"name": "address",
+				"type": "nvarchar"
+			},
+			{
+				"name": "city",
+				"type": "nvarchar"
+			},
+			{
+				"name": "state",
+				"type": "nvarchar"
+			},
+			{
+				"name": "country",
+				"type": "nvarchar"
+			},
+			{
+				"name": "zip_code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "signup_date",
+				"type": "date"
+			},
+			{
+				"name": "last_login",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "total_bookings",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "total_spent",
+				"type": "decimal",
+				"precision": 10,
+				"scale": 2
+			},
+			{
+				"name": "preferred_language",
+				"type": "nvarchar"
+			},
+			{
+				"name": "referral_code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "account_status",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "airbnb",
+			"table": "customer_dim"
+		}
+	}
+}
