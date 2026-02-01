@@ -1,0 +1,92 @@
+{
+	"name": "CustomerDataRaw",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AirBnBADLS",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "customer_raw_data",
+				"fileSystem": "airbnb"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "customer_id",
+				"type": "String"
+			},
+			{
+				"name": "first_name",
+				"type": "String"
+			},
+			{
+				"name": "last_name",
+				"type": "String"
+			},
+			{
+				"name": "email",
+				"type": "String"
+			},
+			{
+				"name": "phone_number",
+				"type": "String"
+			},
+			{
+				"name": "address",
+				"type": "String"
+			},
+			{
+				"name": "city",
+				"type": "String"
+			},
+			{
+				"name": "state",
+				"type": "String"
+			},
+			{
+				"name": "country",
+				"type": "String"
+			},
+			{
+				"name": "zip_code",
+				"type": "String"
+			},
+			{
+				"name": "signup_date",
+				"type": "String"
+			},
+			{
+				"name": "last_login",
+				"type": "String"
+			},
+			{
+				"name": "total_bookings",
+				"type": "String"
+			},
+			{
+				"name": "total_spent",
+				"type": "String"
+			},
+			{
+				"name": "preferred_language",
+				"type": "String"
+			},
+			{
+				"name": "referral_code",
+				"type": "String"
+			},
+			{
+				"name": "account_status",
+				"type": "String"
+			}
+		]
+	}
+}
