@@ -14,7 +14,11 @@
 				}
 			],
 			"sinks": [],
-			"transformations": [],
+			"transformations": [
+				{
+					"name": "split1"
+				}
+			],
 			"scriptLines": [
 				"source(output(",
 				"          booking_id as string,",
@@ -33,7 +37,9 @@
 				"     validateSchema: false,",
 				"     enableChangeFeed: true,",
 				"     changeFeedStartFromTheBeginning: true,",
-				"     format: 'document') ~> BookingData"
+				"     format: 'document') ~> BookingData",
+				"BookingData split(check_out_date<check_in_date,",
+				"     disjoint: true) ~> split1@(BadRecords, AcceptedRecords)"
 			]
 		}
 	}
