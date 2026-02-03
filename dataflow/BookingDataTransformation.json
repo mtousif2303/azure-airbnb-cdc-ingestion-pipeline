@@ -16,7 +16,10 @@
 			"sinks": [],
 			"transformations": [
 				{
-					"name": "split1"
+					"name": "dataQualityCheck"
+				},
+				{
+					"name": "derivedColumn1"
 				}
 			],
 			"scriptLines": [
@@ -39,7 +42,8 @@
 				"     changeFeedStartFromTheBeginning: true,",
 				"     format: 'document') ~> BookingData",
 				"BookingData split(check_out_date<check_in_date,",
-				"     disjoint: true) ~> split1@(BadRecords, AcceptedRecords)"
+				"     disjoint: true) ~> dataQualityCheck@(BadRecords, AcceptedRecords)",
+				"dataQualityCheck@AcceptedRecords derive() ~> derivedColumn1"
 			]
 		}
 	}
