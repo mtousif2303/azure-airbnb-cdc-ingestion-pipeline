@@ -184,7 +184,25 @@
 				"     allowCopyCommand: true,",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
-				"     errorHandlingOption: 'stopOnFirstError') ~> SynapseFactWrite"
+				"     errorHandlingOption: 'stopOnFirstError',",
+				"     mapColumn(",
+				"          booking_id,",
+				"          property_id,",
+				"          customer_id,",
+				"          owner_id,",
+				"          check_in_date,",
+				"          check_out_date,",
+				"          booking_date,",
+				"          amount,",
+				"          currency,",
+				"          city,",
+				"          country,",
+				"          full_address,",
+				"          stay_duration,",
+				"          booking_year,",
+				"          booking_month,",
+				"          timestamp",
+				"     )) ~> SynapseFactWrite"
 			]
 		}
 	}
