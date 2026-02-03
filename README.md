@@ -52,7 +52,6 @@ Synapse Tables:
 
 <img width="3448" height="1828" alt="image" src="https://github.com/user-attachments/assets/6ebb48b5-6c71-4ec4-bc90-91ba16a51284" />
 
-<img width="3448" height="1828" alt="image" src="https://github.com/user-attachments/assets/bf199632-05b7-4e86-a9f4-dd31895ac586" />
 
 
 2) CosmosDB
