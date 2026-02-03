@@ -11,6 +11,14 @@
 					},
 					"name": "BookingData",
 					"description": "import data from BookingDataCosmos"
+				},
+				{
+					"dataset": {
+						"referenceName": "BookingFactDataSynapase",
+						"type": "DatasetReference"
+					},
+					"name": "SynapseLookUp",
+					"description": "import data from the \nBookingFactSynapseData"
 				}
 			],
 			"sinks": [],
@@ -20,6 +28,9 @@
 				},
 				{
 					"name": "DerivedColumns"
+				},
+				{
+					"name": "lookupInSynapse"
 				}
 			],
 			"scriptLines": [
@@ -41,6 +52,29 @@
 				"     enableChangeFeed: true,",
 				"     changeFeedStartFromTheBeginning: true,",
 				"     format: 'document') ~> BookingData",
+				"source(output(",
+				"          booking_id as string,",
+				"          property_id as string,",
+				"          customer_id as integer,",
+				"          owner_id as string,",
+				"          check_in_date as date,",
+				"          check_out_date as date,",
+				"          booking_date as timestamp,",
+				"          amount as double,",
+				"          currency as string,",
+				"          city as string,",
+				"          country as string,",
+				"          full_address as string,",
+				"          stay_duration as long,",
+				"          booking_year as integer,",
+				"          booking_month as integer,",
+				"          timestamp as timestamp",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     isolationLevel: 'READ_UNCOMMITTED',",
+				"     format: 'table',",
+				"     staged: true) ~> SynapseLookUp",
 				"BookingData split(check_out_date<check_in_date,",
 				"     disjoint: true) ~> dataQualityCheck@(BadRecords, AcceptedRecords)",
 				"dataQualityCheck@AcceptedRecords derive(stay_duration = (toTimestamp(check_out_date, 'yyyy-MM-dd') - toTimestamp(check_in_date, 'yyyy-MM-dd')) / 86400000,",
@@ -57,7 +91,11 @@
 				"          property_location = property_location,",
 				"          timestamp = timestamp,",
 				"          property_id = property_id,",
-				"          customer_id = customer_id) ~> DerivedColumns"
+				"          customer_id = customer_id) ~> DerivedColumns",
+				"DerivedColumns lookup(ERROR_FUNCTION('') == ERROR_FUNCTION(''),",
+				"     multiple: false,",
+				"     pickup: 'first',",
+				"     broadcast: 'auto')~> lookupInSynapse"
 			]
 		}
 	}
