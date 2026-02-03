@@ -34,6 +34,9 @@
 				},
 				{
 					"name": "alterRowForUpdate"
+				},
+				{
+					"name": "finalColumns"
 				}
 			],
 			"scriptLines": [
@@ -101,7 +104,42 @@
 				"     desc(SynapseLookUp@timestamp, true),",
 				"     broadcast: 'auto')~> lookupInSynapse",
 				"lookupInSynapse alterRow(insertIf(isNull(SynapseLookUp@booking_id)),",
-				"     updateIf(not(isNull(SynapseLookUp@booking_id)))) ~> alterRowForUpdate"
+				"     updateIf(not(isNull(SynapseLookUp@booking_id)))) ~> alterRowForUpdate",
+				"alterRowForUpdate select(mapColumn(",
+				"          booking_id = DerivedColumns@booking_id,",
+				"          property_id = DerivedColumns@property_id,",
+				"          customer_id = DerivedColumns@customer_id,",
+				"          owner_id = DerivedColumns@owner_id,",
+				"          check_in_date = DerivedColumns@check_in_date,",
+				"          check_out_date = DerivedColumns@check_out_date,",
+				"          booking_date = DerivedColumns@booking_date,",
+				"          amount = DerivedColumns@amount,",
+				"          currency = DerivedColumns@currency,",
+				"          property_location,",
+				"          timestamp = DerivedColumns@timestamp,",
+				"          stay_duration = DerivedColumns@stay_duration,",
+				"          booking_year = DerivedColumns@booking_year,",
+				"          booking_month = DerivedColumns@booking_month,",
+				"          full_addres,",
+				"          booking_id = SynapseLookUp@booking_id,",
+				"          property_id = SynapseLookUp@property_id,",
+				"          customer_id = SynapseLookUp@customer_id,",
+				"          owner_id = SynapseLookUp@owner_id,",
+				"          check_in_date = SynapseLookUp@check_in_date,",
+				"          check_out_date = SynapseLookUp@check_out_date,",
+				"          booking_date = SynapseLookUp@booking_date,",
+				"          amount = SynapseLookUp@amount,",
+				"          currency = SynapseLookUp@currency,",
+				"          city,",
+				"          country,",
+				"          full_address,",
+				"          stay_duration = SynapseLookUp@stay_duration,",
+				"          booking_year = SynapseLookUp@booking_year,",
+				"          booking_month = SynapseLookUp@booking_month,",
+				"          timestamp = SynapseLookUp@timestamp",
+				"     ),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> finalColumns"
 			]
 		}
 	}
