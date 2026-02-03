@@ -15,15 +15,22 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
+					"dataflow": {
+						"referenceName": "BookingDataTransformation",
+						"type": "DataFlowReference"
+					},
 					"compute": {
 						"coreCount": 8,
 						"computeType": "General"
 					},
-					"traceLevel": "Fine"
+					"traceLevel": "Fine",
+					"continuationSettings": {
+						"customizedCheckpointKey": "85a633d6-2686-48bc-b4ea-35b9bc775ba9"
+					}
 				}
 			},
 			{
-				"name": "Stored procedure1",
+				"name": "triggerStoredProcedure",
 				"type": "SqlServerStoredProcedure",
 				"dependsOn": [
 					{
@@ -40,7 +47,14 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": []
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[airbnb].[BookingAggregation]"
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureSynapseAnalyticsForAirBnB",
+					"type": "LinkedServiceReference"
+				}
 			}
 		],
 		"annotations": []
