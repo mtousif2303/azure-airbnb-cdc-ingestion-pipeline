@@ -28,7 +28,11 @@
 						"type": "DatasetReference"
 					},
 					"name": "SynapseFactWrite",
-					"description": "Export data to BookingsFactDataSynapse"
+					"description": "Export data to BookingsFactDataSynapse",
+					"rejectedDataLinkedService": {
+						"referenceName": "AirBnBADLS",
+						"type": "LinkedServiceReference"
+					}
 				}
 			],
 			"transformations": [
