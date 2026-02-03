@@ -3,11 +3,7 @@ Tech Stack : Python, ADLS, CosmosDB, Azure Data Factory, Azure Synapse, SQL
 
 # AirBnB CDC Pipeline - Architecture Deep Dive
 
-## 📐 Architecture Overview
-
 This document provides a comprehensive explanation of the architecture, design decisions, and technical implementation details of the AirBnB CDC Ingestion Pipeline.
-
-## 🎨 Architecture Patterns
 
 ### 1. Lambda Architecture (Simplified)
 The pipeline implements a simplified version of Lambda Architecture with two data paths:
