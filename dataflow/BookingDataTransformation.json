@@ -28,7 +28,6 @@
 						"type": "DatasetReference"
 					},
 					"name": "SynapseFactWrite",
-					"description": "Export data to BookingsFactDataSynapse",
 					"rejectedDataLinkedService": {
 						"referenceName": "AirBnBADLS",
 						"type": "LinkedServiceReference"
@@ -110,7 +109,7 @@
 				"          timestamp = timestamp,",
 				"          property_id = property_id,",
 				"          customer_id = customer_id,",
-				"          property_location = concat(property_location.city, ' '),",
+				"          property_location = concat(property_location.city),",
 				"          city = property_location.city,",
 				"          country = property_location.country) ~> DerivedColumns",
 				"DerivedColumns, SynapseLookUp lookup(DerivedColumns@booking_id == SynapseLookUp@booking_id,",
@@ -176,29 +175,15 @@
 				"     ),",
 				"     deletable:false,",
 				"     insertable:true,",
-				"     updateable:false,",
-				"     upsertable:true,",
-				"     keys:[(booking_id)],",
+				"     updateable:true,",
+				"     upsertable:false,",
+				"     keys:['booking_id'],",
 				"     format: 'table',",
 				"     staged: true,",
 				"     allowCopyCommand: true,",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
-				"     errorHandlingOption: 'stopOnFirstError',",
-				"     mapColumn(",
-				"          booking_id,",
-				"          property_id,",
-				"          customer_id,",
-				"          owner_id,",
-				"          amount,",
-				"          currency,",
-				"          city,",
-				"          country,",
-				"          full_address,",
-				"          stay_duration,",
-				"          booking_year,",
-				"          booking_month",
-				"     )) ~> SynapseFactWrite"
+				"     errorHandlingOption: 'stopOnFirstError') ~> SynapseFactWrite"
 			]
 		}
 	}
