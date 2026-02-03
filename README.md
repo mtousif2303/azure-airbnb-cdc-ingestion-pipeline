@@ -1,32 +1,5 @@
-<img width="3448" height="1828" alt="image" src="https://github.com/user-attachments/assets/6ebb48b5-6c71-4ec4-bc90-91ba16a51284" /># Azure-airbnb-cdc-ingestion-pipeline
+# Azure-airbnb-cdc-ingestion-pipeline
 Tech Stack : Python, ADLS, CosmosDB, Azure Data Factory, Azure Synapse, SQL
-
-
-1) ADLS
-
-<img width="3448" height="1828" alt="image" src="https://github.com/user-attachments/assets/bf199632-05b7-4e86-a9f4-dd31895ac586" />
-
-2) CosmosDB
-
-<img width="3416" height="2026" alt="image" src="https://github.com/user-attachments/assets/38c8f7ab-23fb-4069-bcc3-6914962083a4" />
-
-
-3) Azure Data Fatory (ADF)
-
-<img width="3456" height="1982" alt="image" src="https://github.com/user-attachments/assets/1e7dd5f6-5414-4a16-9fd8-753968dc6ee1" />
-
-4) Azure Synapse
-
-<img width="3432" height="2060" alt="image" src="https://github.com/user-attachments/assets/9d69a7d2-c278-40fa-a70b-2ee947bcd140" />
-
-5) python script to generate the booking events
-
-<img width="3428" height="1988" alt="image" src="https://github.com/user-attachments/assets/4dd14993-2b5f-4601-9202-3bd8cd86eb37" />
-
-
-
-
-
 
 # AirBnB CDC Pipeline - Architecture Deep Dive
 
@@ -72,6 +45,46 @@ Synapse Tables:
 - bookings_fact (Fact)
 - BookingCustomerAggregation (Aggregates)
 ```
+
+
+1) ADLS
+
+<img width="3448" height="1828" alt="image" src="https://github.com/user-attachments/assets/6ebb48b5-6c71-4ec4-bc90-91ba16a51284" />
+
+<img width="3448" height="1828" alt="image" src="https://github.com/user-attachments/assets/bf199632-05b7-4e86-a9f4-dd31895ac586" />
+
+2) CosmosDB
+
+<img width="3416" height="2026" alt="image" src="https://github.com/user-attachments/assets/38c8f7ab-23fb-4069-bcc3-6914962083a4" />
+
+
+3) Azure Data Fatory (ADF)
+
+<img width="3456" height="1982" alt="image" src="https://github.com/user-attachments/assets/1e7dd5f6-5414-4a16-9fd8-753968dc6ee1" />
+
+4) Azure Synapse
+
+<img width="3432" height="2060" alt="image" src="https://github.com/user-attachments/assets/9d69a7d2-c278-40fa-a70b-2ee947bcd140" />
+
+5) python script to generate the booking events
+
+<img width="3428" height="1988" alt="image" src="https://github.com/user-attachments/assets/4dd14993-2b5f-4601-9202-3bd8cd86eb37" />
+
+
+6) Loading dimention pipeline
+
+<img width="3448" height="2072" alt="image" src="https://github.com/user-attachments/assets/07dfb4f1-239d-4ccc-98d4-99dfe3e818fd" />
+
+7) Loading booking fact pipeline
+
+<img width="3440" height="2136" alt="image" src="https://github.com/user-attachments/assets/876a5ae9-cbd6-411e-b941-35d3a536911e" />
+
+8) AirBnBCDCPipeline
+
+<img width="3398" height="1936" alt="image" src="https://github.com/user-attachments/assets/9b236b2d-adae-4fa7-8381-59be2ff1e573" />
+
+
+
 
 ## 🔄 Change Data Capture (CDC) Implementation
 
