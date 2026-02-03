@@ -1,11 +1,37 @@
-# Azure-airbnb-cdc-ingestion-pipeline
+<img width="3448" height="1828" alt="image" src="https://github.com/user-attachments/assets/6ebb48b5-6c71-4ec4-bc90-91ba16a51284" /># Azure-airbnb-cdc-ingestion-pipeline
 Tech Stack : Python, ADLS, CosmosDB, Azure Data Factory, Azure Synapse, SQL
+
+
+1) ADLS
+
+<img width="3448" height="1828" alt="image" src="https://github.com/user-attachments/assets/bf199632-05b7-4e86-a9f4-dd31895ac586" />
+
+2) CosmosDB
+
+<img width="3416" height="2026" alt="image" src="https://github.com/user-attachments/assets/38c8f7ab-23fb-4069-bcc3-6914962083a4" />
+
+
+3) Azure Data Fatory (ADF)
+
+<img width="3456" height="1982" alt="image" src="https://github.com/user-attachments/assets/1e7dd5f6-5414-4a16-9fd8-753968dc6ee1" />
+
+4) Azure Synapse
+
+<img width="3432" height="2060" alt="image" src="https://github.com/user-attachments/assets/9d69a7d2-c278-40fa-a70b-2ee947bcd140" />
+
+5) python script to generate the booking events
+
+<img width="3428" height="1988" alt="image" src="https://github.com/user-attachments/assets/4dd14993-2b5f-4601-9202-3bd8cd86eb37" />
+
+
+
+
+
 
 # AirBnB CDC Pipeline - Architecture Deep Dive
 
 This document provides a comprehensive explanation of the architecture, design decisions, and technical implementation details of the AirBnB CDC Ingestion Pipeline.
 
-### 1. Lambda Architecture (Simplified)
 The pipeline implements a simplified version of Lambda Architecture with two data paths:
 
 **Batch Layer** (Customer Data):
