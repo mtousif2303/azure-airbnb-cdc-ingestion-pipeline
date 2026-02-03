@@ -56,7 +56,8 @@
 				"          owner_id = owner_id,",
 				"          property_location = property_location,",
 				"          timestamp = timestamp,",
-				"          property_id = property_id) ~> DerivedColumns"
+				"          property_id = property_id,",
+				"          customer_id = customer_id) ~> DerivedColumns"
 			]
 		}
 	}
