@@ -128,7 +128,6 @@
 				"          booking_date = DerivedColumns@booking_date,",
 				"          amount = DerivedColumns@amount,",
 				"          currency = DerivedColumns@currency,",
-				"          property_location,",
 				"          timestamp = DerivedColumns@timestamp,",
 				"          stay_duration = DerivedColumns@stay_duration,",
 				"          booking_year = DerivedColumns@booking_year,",
