@@ -19,7 +19,7 @@
 					"name": "dataQualityCheck"
 				},
 				{
-					"name": "derivedColumn1"
+					"name": "DerivedColumns"
 				}
 			],
 			"scriptLines": [
@@ -55,7 +55,8 @@
 				"          currency = currency,",
 				"          owner_id = owner_id,",
 				"          property_location = property_location,",
-				"          timestamp = timestamp) ~> derivedColumn1"
+				"          timestamp = timestamp,",
+				"          property_id = property_id) ~> DerivedColumns"
 			]
 		}
 	}
