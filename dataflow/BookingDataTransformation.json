@@ -92,9 +92,10 @@
 				"          timestamp = timestamp,",
 				"          property_id = property_id,",
 				"          customer_id = customer_id) ~> DerivedColumns",
-				"DerivedColumns lookup(ERROR_FUNCTION('') == ERROR_FUNCTION(''),",
+				"DerivedColumns, SynapseLookUp lookup(DerivedColumns@booking_id == SynapseLookUp@booking_id,",
 				"     multiple: false,",
 				"     pickup: 'first',",
+				"     desc(SynapseLookUp@timestamp, true),",
 				"     broadcast: 'auto')~> lookupInSynapse"
 			]
 		}
