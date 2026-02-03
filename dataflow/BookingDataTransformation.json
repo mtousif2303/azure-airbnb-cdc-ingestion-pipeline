@@ -200,8 +200,7 @@
 				"          full_address,",
 				"          stay_duration,",
 				"          booking_year,",
-				"          booking_month,",
-				"          timestamp",
+				"          booking_month",
 				"     )) ~> SynapseFactWrite"
 			]
 		}
