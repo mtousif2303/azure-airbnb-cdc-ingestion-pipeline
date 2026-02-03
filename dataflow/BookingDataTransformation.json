@@ -43,7 +43,7 @@
 				"     format: 'document') ~> BookingData",
 				"BookingData split(check_out_date<check_in_date,",
 				"     disjoint: true) ~> dataQualityCheck@(BadRecords, AcceptedRecords)",
-				"dataQualityCheck@AcceptedRecords derive(stay_duration = (toTimestamp(check_out_date)-toTimestamp(check_in_date)) / 86400000,",
+				"dataQualityCheck@AcceptedRecords derive(stay_duration = (toTimestamp(check_out_date, 'yyyy-MM-dd') - toTimestamp(check_in_date, 'yyyy-MM-dd')) / 86400000,",
 				"          booking_year = year(toTimestamp(booking_date, 'yyyy-MM-dd HH:mm:ss')),",
 				"          booking_month = month(toTimestamp(booking_date, 'yyyy-MM-dd HH:mm:ss')),",
 				"          full_addres = concat(property_location.city, ', ', property_location.country),",
