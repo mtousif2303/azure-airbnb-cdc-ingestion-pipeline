@@ -102,8 +102,14 @@ Synapse Tables:
     
 
 
+services used in azure
+
 <img width="3440" height="2094" alt="image" src="https://github.com/user-attachments/assets/94e37bb9-ec0a-4df9-be56-cb03932eefd2" />
 
+<img width="3432" height="2096" alt="image" src="https://github.com/user-attachments/assets/1a00b8ad-1931-495d-90d3-12b19aac9bed" />
+
+
+<img width="3444" height="2050" alt="image" src="https://github.com/user-attachments/assets/45b51aaa-bba4-48ee-b32b-1915ac7cb7f6" />
 
 
 ## 🔄 Change Data Capture (CDC) Implementation
