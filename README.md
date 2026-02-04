@@ -99,8 +99,10 @@ Synapse Tables:
 10) Booking facts table in azure synapase analytics
 
     <img width="3448" height="2022" alt="image" src="https://github.com/user-attachments/assets/1f1af35e-daa5-4877-a8ef-c19be545334c" />
+    
 
 
+<img width="3440" height="2094" alt="image" src="https://github.com/user-attachments/assets/94e37bb9-ec0a-4df9-be56-cb03932eefd2" />
 
 
 
